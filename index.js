@@ -133,111 +133,56 @@ console.log(combinedHobbies([
 
 
 // 08 - function printChemicalInfo(chemicals)
-// const chemicals = [
-//     {
-//       compoundId: 'CHEM001',
-//       name: 'Aspirin',
-//       formula: 'C9H8O4',
-//       description: 'Aspirin is a common medication used to reduce pain and inflammation.',
-//       molecularWeight: '180.16 g/mol',
-//       meltingPoint: '135°C',
-//       boilingPoint: '140°C',
-//       solubility: 'Slightly soluble in water'
-//     },
-//     {
-//       compoundId: 'CHEM002',
-//       name: 'Caffeine',
-//       formula: 'C8H10N4O2',
-//       description: 'Caffeine is a stimulant found in coffee, tea, and various energy drinks.',
-//       molecularWeight: '194.19 g/mol',
-//       meltingPoint: '238°C',
-//       boilingPoint: '178°C',
-//       solubility: 'Freely soluble in water'
-//     },
-//     {
-//       compoundId: 'CHEM003',
-//       name: 'Ethanol',
-//       formula: 'C2H6O',
-//       description: 'Ethanol, also known as alcohol, is commonly used as a solvent and in alcoholic beverages.',
-//       molecularWeight: '46.07 g/mol',
-//       meltingPoint: '-114.1°C',
-//       boilingPoint: '78.37°C',
-//       solubility: 'Miscible with water'
-//     }
-//   ];
+const chemicals = [
+    {
+      compoundId: 'CHEM001',
+      name: 'Aspirin',
+      formula: 'C9H8O4',
+      description: 'Aspirin is a common medication used to reduce pain and inflammation.',
+      molecularWeight: '180.16 g/mol',
+      meltingPoint: '135°C',
+      boilingPoint: '140°C',
+      solubility: 'Slightly soluble in water'
+    },
+    {
+      compoundId: 'CHEM002',
+      name: 'Caffeine',
+      formula: 'C8H10N4O2',
+      description: 'Caffeine is a stimulant found in coffee, tea, and various energy drinks.',
+      molecularWeight: '194.19 g/mol',
+      meltingPoint: '238°C',
+      boilingPoint: '178°C',
+      solubility: 'Freely soluble in water'
+    },
+    {
+      compoundId: 'CHEM003',
+      name: 'Ethanol',
+      formula: 'C2H6O',
+      description: 'Ethanol, also known as alcohol, is commonly used as a solvent and in alcoholic beverages.',
+      molecularWeight: '46.07 g/mol',
+      meltingPoint: '-114.1°C',
+      boilingPoint: '78.37°C',
+      solubility: 'Miscible with water'
+    }
+  ];
 
-//printChemicalInfo(chemicals)
-//Expected output
+  function printChemicalInfo(chemicals) {
+    chemicals.forEach(chemical => {
+      const line = '+-------------------------------------------------------+';
+      console.log(line);
+      console.log(`| Compound ID: ${chemical.id.padEnd(45)}|`);
+      console.log(`| Name: ${chemical.name.padEnd(50)}|`);
+      console.log(`| Formula: ${chemical.formula.padEnd(47)}|`);
+      console.log(`| Description: ${chemical.description.padEnd(47)}|`);
+      console.log(`| Molecular Weight: ${chemical.molecularWeight.padEnd(37)}|`);
+      console.log(`| Melting Point: ${chemical.meltingPoint.padEnd(40)}|`);
+      console.log(`| Boiling Point: ${chemical.boilingPoint.padEnd(40)}|`);
+      console.log(`| Solubility: ${chemical.solubility.padEnd(43)}|`);
+      console.log(line);
+    });
+  }
 
-// +-------------------------------------------------------+
-// | Compound ID: CHEM001                                 |
-// | Name: Aspirin                                        |
-// | Formula: C9H8O4                                      |
-// | Description: Aspirin is a common medication used to  |
-// | reduce pain and inflammation.                        |
-// | Molecular Weight: 180.16 g/mol                       |
-// | Melting Point: 135°C                                 |
-// | Boiling Point: 140°C                                 |
-// | Solubility: Slightly soluble in water                |
-// +-------------------------------------------------------+
-// +-------------------------------------------------------+
-// | Compound ID: CHEM002                                 |
-// | Name: Caffeine                                       |
-// | Formula: C8H10N4O2                                   |
-// | Description: Caffeine is a stimulant found in coffee,|
-// | tea, and various energy drinks.                      |
-// | Molecular Weight: 194.19 g/mol                       |
-// | Melting Point: 238°C                                 |
-// | Boiling Point: 178°C                                 |
-// | Solubility: Freely soluble in water                  |
-// +-------------------------------------------------------+
-// +-------------------------------------------------------+
-// | Compound ID: CHEM003                                 |
-// | Name: Ethanol                                        |
-// | Formula: C2H6O                                       |
-// | Description: Ethanol, also known as alcohol, is      |
-// | commonly used as a solvent and in alcoholic beverages|
-// | Molecular Weight: 46.07 g/mol                        |
-// | Melting Point: -114.1°C                              |
-// | Boiling Point: 78.37°C                               |
-// | Solubility: Miscible with water                      |
-// +-------------------------------------------------------+
-function printChemicalInfo(chemicals){
-
-}
-
-printChemicalInfo([
-        {
-          compoundId: 'CHEM001',
-          name: 'Aspirin',
-          formula: 'C9H8O4',
-          description: 'Aspirin is a common medication used to reduce pain and inflammation.',
-          molecularWeight: '180.16 g/mol',
-          meltingPoint: '135°C',
-          boilingPoint: '140°C',
-          solubility: 'Slightly soluble in water'
-        },
-        {
-          compoundId: 'CHEM002',
-          name: 'Caffeine',
-          formula: 'C8H10N4O2',
-          description: 'Caffeine is a stimulant found in coffee, tea, and various energy drinks.',
-          molecularWeight: '194.19 g/mol',
-          meltingPoint: '238°C',
-          boilingPoint: '178°C',
-          solubility: 'Freely soluble in water'
-        },
-        {
-          compoundId: 'CHEM003',
-          name: 'Ethanol',
-          formula: 'C2H6O',
-          description: 'Ethanol, also known as alcohol, is commonly used as a solvent and in alcoholic beverages.',
-          molecularWeight: '46.07 g/mol',
-          meltingPoint: '-114.1°C',
-          boilingPoint: '78.37°C',
-          solubility: 'Miscible with water'
-        }
-      ]);
+  //printChemicalInfo(chemicals); (sin terminar!!)
 
 
 // 09 - function getGetUniqueGuestList(guestList)
@@ -245,6 +190,7 @@ printChemicalInfo([
 
 // Remove duplicated elements from the  guests list
 // Expected getGetUniqueGuestList(guestList)) ['Alice 🙆🏻‍♀️', 'Bob 🙍🏼', 'Charlie 👨🏼‍🚀', 'David 🤵🏿‍♂️']
+
 function getGetUniqueGuestList(guestList) {
     const uniqueGuest = new Set(guestList);
     return [...uniqueGuest];
@@ -254,46 +200,62 @@ console.log(getGetUniqueGuestList(['Alice 🙆🏻‍♀️', 'Bob 🙍🏼', 'C
 // 10 - function showUserProfiles(user)
 // User data
 
-// const user1 = {
-//     id: 1,
-//     name: 'Carol Smith',
-//     profile: {
-//       social: {
-//          twitter: 'carol.smith',
-//          facebook: 'carol.smith77'
-//      }
-//    }
-//};
+const user1 = {
+    id: 1,
+    name: 'Carol Smith',
+    profile: {
+      social: {
+         twitter: 'carol.smith',
+         facebook: 'carol.smith77'
+     }
+   }
+};
 
-// const user2 = {
-//     id: 2,
-//     name: 'Jane Smith',
-//     profile: {
-//       email: 'jane.smith@example.com'
-//     }
-//};
+const user2 = {
+    id: 2,
+    name: 'Jane Smith',
+    profile: {
+      email: 'jane.smith@example.com'
+    }
+};
 
-//   showUserProfile(user1); // Expected output: 'carol.smith, carol.smith77'
-//   showUserProfile(user2); // Expected output: 'jane.smith@example.com'
 
 function showUserProfile(user){
+  let profileData = [];
 
+    if (user.profile.social) {
+        if (user.profile.social.twitter) {
+            profileData.push(user.profile.social.twitter);
+        }
+        if (user.profile.social.facebook) {
+            profileData.push(user.profile.social.facebook);
+        }
+    }
+
+    if (user.profile.email) {
+        profileData.push(user.profile.email);
+    }
+
+    console.log(profileData.join(', '));
 }
+
+  showUserProfile(user1); // Expected output: 'carol.smith, carol.smith77'
+  showUserProfile(user2); // Expected output: 'jane.smith@example.com'
 
 // 11 - function sortLeaderBoardByScoreDesc(leaderBoard)
 // The function should sort the players by score as it's displayed on the expected output
 
-// const leaderBoard = [
-//   { player: "John", score: 80 },
-//   { player: "Charlie", score: 20 },
-//   { player: "Julio", score: 50 },
-//   { player: "Bob", score: 80 },
-//   { player: "Bobby", score: 11 },
-//   { player: "Tommy", score: 43 },
-//   { player: "Eric", score: 99 },
-//   { player: "Alice", score: 100 },
-//   { player: "Alfred", score: 30 },
-// ];
+const leaderBoard = [
+  { player: "John", score: 80 },
+  { player: "Charlie", score: 20 },
+  { player: "Julio", score: 50 },
+  { player: "Bob", score: 80 },
+  { player: "Bobby", score: 11 },
+  { player: "Tommy", score: 43 },
+  { player: "Eric", score: 99 },
+  { player: "Alice", score: 100 },
+  { player: "Alfred", score: 30 },
+];
 
 // Expected output:
 // [
@@ -309,12 +271,19 @@ function showUserProfile(user){
 // ]
 
 function sortLeaderBoardByScoreDesc(leaderBoard){
-    leaderBoard.toSorted(a.score, b.score => b.score - a.score);
+    return leaderBoard.toSorted((a, b) => b.score - a.score);
 }
+
+console.log(sortLeaderBoardByScoreDesc(leaderBoard));
 
 // 12 - function
 
-// function getTopFiveWorstPlayers(leaderBoard)
+function getTopFiveWorstPlayers(leaderBoard) {
+  const sortedLeaderBoard = leaderBoard.toSorted((a, b) => a.score - b.score);
+  return sortedLeaderBoard.slice(0, 5);
+}
+
+console.log(getTopFiveWorstPlayers(leaderBoard));
 
 // Expected output:
 // [
@@ -328,51 +297,72 @@ function sortLeaderBoardByScoreDesc(leaderBoard){
 // NOTE: ⚠️ original array shouldn't be modified. or we are missing players.
 
 // 13 - function safeCopy()
-// const companyHierarchy = {
-//     name: 'Company',
-//     departments: [
-//       {
-//         name: 'Engineering',
-//         head: 'Alice',
-//         subDepartments: [
-//           {
-//             name: 'Backend',
-//             head: 'Bob',
-//             employees: ['Charlie', 'David']
-//           },
-//           {
-//             name: 'Frontend',
-//             head: 'Eve',
-//             employees: ['Frank', 'Grace']
-//           }
-//         ]
-//       },
-//       {
-//         name: 'Sales',
-//         head: 'Henry',
-//         employees: ['Isaac', 'Jane']
-//       }
-//     ]
-//   };
+const companyHierarchy = {
+    name: 'Company',
+    departments: [
+      {
+        name: 'Engineering',
+        head: 'Alice',
+        subDepartments: [
+          {
+            name: 'Backend',
+            head: 'Bob',
+            employees: ['Charlie', 'David']
+          },
+          {
+            name: 'Frontend',
+            head: 'Eve',
+            employees: ['Frank', 'Grace']
+          }
+        ]
+      },
+      {
+        name: 'Sales',
+        head: 'Henry',
+        employees: ['Isaac', 'Jane']
+      }
+    ]
+  };
 
 // Deep copy function
 // function safeCopy(obj) {
 //      ToDo (complete the function here...)
 //  }
+function safeCopy(obj) {
+  if (Array.isArray(obj)) {
+    return obj.map(item => safeCopy(item));
+  } else if (obj !== null && typeof obj === 'object') {
+    let copiedObj = {};
+    for (let key in obj) {
+      if (obj.hasOwnProperty(key)) {
+        copiedObj[key] = safeCopy(obj[key]);
+      }
+    }
+    return copiedObj;
+  }
+  return obj;
+}
 
 //   // Example usage
-//   const copiedHierarchy = safeCopy(companyHierarchy);
+  const copiedHierarchy = safeCopy(companyHierarchy);
 
 //   // Modify the copied hierarchy
-//   copiedHierarchy.departments.push({
-//     name: 'Marketing',
-//     head: 'Karen',
-//     employees: ['Liam', 'Mia']
-//   });
+  copiedHierarchy.departments.push({
+    name: 'Marketing',
+    head: 'Karen',
+    employees: ['Liam', 'Mia']
+  });
 
 //   // Verify independence
-//   console.log('Original Company Hierarchy:');
-//   console.log(companyHierarchy);
+  console.log('Original Company Hierarchy:');
 
-//   console.log('Copied Company Hierarchy with Modifications:');
-//   console.log(copiedHierarchy);
+  // Cuando el objeto contiene arreglos u objetos anidados, 
+  // estos se representan como [Array] en la salida para evitar una impresión excesiva de datos.
+  console.log(companyHierarchy);
+
+  // verificacion con el JSON.stringify
+  console.log(JSON.stringify(companyHierarchy, null, 2));
+
+  console.log('Copied Company Hierarchy with Modifications:');
+  console.log(copiedHierarchy);
+  console.log(JSON.stringify(copiedHierarchy, null, 2));
