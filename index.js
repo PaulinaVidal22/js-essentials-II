@@ -170,19 +170,48 @@ const chemicals = [
     chemicals.forEach(chemical => {
       const line = '+-------------------------------------------------------+';
       console.log(line);
-      console.log(`| Compound ID: ${chemical.id.padEnd(45)}|`);
-      console.log(`| Name: ${chemical.name.padEnd(50)}|`);
-      console.log(`| Formula: ${chemical.formula.padEnd(47)}|`);
-      console.log(`| Description: ${chemical.description.padEnd(47)}|`);
-      console.log(`| Molecular Weight: ${chemical.molecularWeight.padEnd(37)}|`);
-      console.log(`| Melting Point: ${chemical.meltingPoint.padEnd(40)}|`);
-      console.log(`| Boiling Point: ${chemical.boilingPoint.padEnd(40)}|`);
-      console.log(`| Solubility: ${chemical.solubility.padEnd(43)}|`);
+      console.log(`| Compound ID: ${chemical.id.padEnd(45)}|`); // 41
+      console.log(`| Name: ${chemical.name.padEnd(50)}|`); // 48
+      console.log(`| Formula: ${chemical.formula.padEnd(47)}|`); // 45
+      //console.log(`| Description: ${chemical.description.padEnd(47)}|`); 
+      const descriptionLines = wrapText(chemical.description, 40);
+        descriptionLines.forEach((line, index) => {
+        if (index === 0) {
+            console.log(`| Description: ${line.padEnd(41)}|`);
+        } else {
+            console.log(`|             ${line.padEnd(42)}|`);
+        }
+        });
+      console.log(`| Molecular Weight: ${chemical.molecularWeight.padEnd(37)}|`); // 36
+      console.log(`| Melting Point: ${chemical.meltingPoint.padEnd(40)}|`); // 39
+      console.log(`| Boiling Point: ${chemical.boilingPoint.padEnd(40)}|`); // 39
+      console.log(`| Solubility: ${chemical.solubility.padEnd(43)}|`);      // 42
       console.log(line);
     });
   }
 
-  //printChemicalInfo(chemicals); (sin terminar!!)
+
+function wrapText(text, maxLineLength) {
+    const words = text.split(' ');
+    const lines = [];
+    let currentLine = '';
+
+    words.forEach(word => {
+    if ((currentLine + word).length > maxLineLength) {
+        lines.push(currentLine.trim());
+        currentLine = '';
+        }
+        currentLine += `${word} `;
+    });
+
+    if (currentLine.trim().length > 0) {
+        lines.push(currentLine.trim());
+    }
+
+    return lines;
+}
+
+//printChemicalInfo(chemicals); //(sin terminar!!)
 
 
 // 09 - function getGetUniqueGuestList(guestList)
